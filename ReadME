@@ -1,1 +1,125 @@
-# Cognitive Computing
+# document.
+
+Maize Leaf Disease Classification - Cognitive Computing Exam
+Project Overview
+This Jupyter notebook performs exploratory data analysis (EDA) on a maize leaf disease dataset containing four classes of plant conditions. The project is designed for a cognitive computing exam and focuses on analyzing class distribution imbalances to inform data preprocessing decisions for building a disease classification model.
+
+Dataset Structure
+The dataset is organized in Google Drive with the following directory structure:
+
+text
+/data
+  ├── Common_Rust/ (1,306 images)
+  ├── Healthy/ (1,162 images)
+  ├── Gray_Leaf_Spot/ (574 images)
+  └── Blight/ (1,146 images)
+Total Images: 4,188 across all classes
+
+Class Imbalance Issue: The dataset shows a significant imbalance with Gray_Leaf_Spot having only 574 images compared to other classes (1,000+ images). This imbalance will be addressed through data augmentation techniques in subsequent preprocessing steps.
+
+Key Features
+1. Google Drive Integration
+Mounts Google Drive to access the dataset stored in /content/drive/MyDrive/Cognitive_Computing_Exam/data
+
+Uses google.colab.drive.mount() for seamless file access within the Colab environment
+
+2. Exploratory Data Analysis (EDA)
+Class Distribution Analysis: Counts and displays the number of images per disease class
+
+Visualization: Creates bar charts showing the imbalance between classes
+
+Sample Image Display: Shows example images from each disease category for visual inspection and quality assessment
+
+3. Technical Implementation
+Prepares for TensorFlow's ImageDataGenerator implementation (imported but not yet fully implemented)
+
+Employs matplotlib for data visualization and analysis
+
+Utilizes Python's os and collections modules for file system operations and counting
+
+Setup Instructions
+Prerequisites
+Google Colab environment
+
+Google Drive account with the dataset uploaded to the specified path
+
+Running the Notebook
+Open the notebook in Google Colab
+
+Run the first cell to mount Google Drive (you'll need to grant access permissions)
+
+Execute subsequent cells in order to:
+
+Load and analyze class distributions
+
+Visualize the data imbalance using bar charts
+
+Display sample images from each class for quality assessment
+
+Key Observations
+Severe Class Imbalance:
+
+Gray_Leaf_Spot class has approximately 50% fewer images than other classes
+
+This imbalance could bias the model if not addressed
+
+Dataset Characteristics:
+
+Total of 4,188 images across four classes
+
+Clear visual distinctions between disease types are visible in sample images
+
+Data Quality:
+
+Images appear to be properly labeled and organized
+
+Visual inspection shows identifiable disease characteristics
+
+Next Steps
+Based on the EDA findings, the following steps are recommended:
+
+Data Preprocessing:
+
+Implement data augmentation for the underrepresented Gray_Leaf_Spot class
+
+Use TensorFlow's ImageDataGenerator with augmentation techniques
+
+Consider oversampling or synthetic data generation for balanced training
+
+Model Development:
+
+Prepare the dataset for model training
+
+Split data into training, validation, and test sets
+
+Develop CNN architecture for disease classification
+
+Evaluation:
+
+Use appropriate metrics considering class imbalance (F1-score, precision, recall)
+
+Implement cross-validation techniques
+
+Dependencies
+The notebook requires the following Python libraries:
+
+google.colab (for Colab-specific functionality)
+
+tensorflow.keras.preprocessing.image (for image data generators)
+
+os (for file system operations)
+
+collections.Counter (for counting class distributions)
+
+matplotlib.pyplot (for data visualization)
+
+File Structure
+text
+Cognitive_Computing_Exam/
+├── data/
+│   ├── Common_Rust/ (1,306 images)
+│   ├── Healthy/ (1,162 images)
+│   ├── Gray_Leaf_Spot/ (574 images)
+│   └── Blight/ (1,146 images)
+└── Cognitive (3).ipynb (main notebook)
+
